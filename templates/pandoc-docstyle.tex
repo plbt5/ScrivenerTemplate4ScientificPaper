@@ -1,0 +1,285 @@
+\documentclass[a4paper,11pt,oneside,oldfontcommands]{memoir}
+\usepackage{ecis2015}
+\usepackage{datetime}    			% sourced from; http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/datetime/
+\usepackage{longtable}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb, setspace, rotating, titlesec, multirow, adjustbox, array, booktabs, threeparttable}
+									% is all of this necessary?? 
+%%%%%%%%%%%%%%%%%									
+%% Fonts, fonts, fonts, notably for math
+\usepackage{xfrac}					% tbv slanted fractions: \sfrac{}{}
+\usepackage{pifont}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[T1]{fontenc}			% 	Ik kan ook overwegen Obyknovennaya Novaya te gebruiken, ook fraai. Gevonden op http://www.tug.dk/FontCatalogue/venturisadfno2/
+
+\usepackage{amsmath}				% <amsmath> needs to be loaded before ntheorem (section 3.2.1, ftp://ftp.dante.de/pub/tex/macros/latex/contrib/ntheorem/ntheorem.pdf) 
+\usepackage[mathcal]{euscript}		% tbv de gecalligrafeerde mathcal{O} en W(orld) en (M)odel etc. Refer to http://texdoc.net/texmf-dist/doc/fonts/amsfonts/euscript.pdf
+									% Note that, in fact, eucal and euscript are identical, except that they use different commands (\mathcal and \mathscr). By using euscript 
+									% we only provide \mathscr{} and leave \mathcal{} from amsmath unchanged
+\usepackage{pgothic}				% Used for modern gothic that has a readible S
+\DeclareMathAlphabet{\mathgoth}{T1}{pgoth}{m}{n}	% Declaring the pgothic family as math alphabet
+%\usepackage{addfont}				% This would be an alternative for the readible S font, but not working
+%\addfont[1.25]{OT1}{hge}{\hge}
+%\DeclareMathAlphabet{\mathgoth}{OT1}{hge}{m}{n}	% Declaring the hge family as math alphabet
+
+\usepackage{lmodern}				% necessary in combination with CMcal-font from mathcal/euscript to generate the font that is necessary for the Interpretation function \CMcal{I}
+\usepackage{amssymb}				% necessary for (at least) the \mathbb font
+\usepackage{mathrsfs}				% necessary for (at least) the \mathpzc font
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{l}{it}		% Declaring the pzc font as math alphabet (not used, yet)
+
+
+\usepackage[normalem]{ulem}			% tbv strikout text: \sout{deze tekst is strikeout}
+\usepackage{siunitx}				% Necessary??
+
+\usepackage{venturis2}				% Ik wil het font Venturis ADF No2 toepassen als Normalfont
+
+%% End of Fonts
+%%%%%%%%%%%%%%%
+
+\usepackage{xcolor}
+%%\usepackage{MnSymbol}				% Levert foutmelding: Too many math alphabets used in version normal. 
+\usepackage[xindy,toc]{glossaries}	%%%% The glossaries environment. Refer to: http://en.wikibooks.org/wiki/LaTeX/Glossary
+%%%\usepackage{pst-plot}				%%%% The ps trick environment. Zie ook: http://tug.org/PSTricks/main.cgi?file=examples REQUIRES --latex-engine=xelatex
+
+%% Theorems
+\usepackage[ntheorem]{empheq}
+\usepackage[thmmarks]{ntheorem}		% Easier handling of theorem-like environments. refer to ftp://ftp.dante.de/pub/tex/macros/latex/contrib/ntheorem/ntheorem.pdf
+
+\usepackage{datetime}    			 % sourced from; http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/datetime/
+\usepackage{mdframed}
+
+%% Figures and table placement
+\usepackage{flafter}				% sourced from http://tug.ctan.org/tex-archive/info/epslatex/english/epslatex.pdf page 55
+
+%% Logical proofs
+%\usepackage{lplfitch}				% sourced from https://github.com/rzach/lplfitch
+%									% documentation from http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/lplfitch/lplfitch.pdf
+\usepackage{fitch}					% The fitch package is more simple to use than lplfitch
+
+%% Lists
+%\usepackage[ampersand]{easylist}	% The easylist environment
+\usepackage{enumitem}				% List manipulation package
+
+%% Grammars
+\usepackage[epsilon]{backnaur}		% For creation of BNF grammars. Refer to http://ctan.cs.uu.nl/macros/latex/contrib/backnaur/backnaur.pdf 
+
+%% Lorem ipsum generated text
+\usepackage{blindtext}
+
+%% ToDo's							% Creating proper todo bubbles adjacent to text. Refer to http://ctan.triasinformatica.nl/macros/latex/contrib/todonotes/todonotes.pdf
+\usepackage[textsize=tiny,colorinlistoftodos]{todonotes}	
+
+%% Cross-referencing				% Allow the format of cross-references to be determined automatically according to the “type” of cross-reference (equation, section, etc.) and the context in which the cross-reference is used.
+%\usepackage{varioref}				% sourced from http://texdoc.net/texmf-dist/doc/latex/tools/varioref.pdf
+%\usepackage{hyperref}				% If we want to use hyperref, sometime in the future for some reason, it should be defined in between of varioref and cleveref
+\usepackage{cleveref}				% sourced from http://tug.ctan.org/macros/latex/contrib/cleveref/cleveref.pdf Makes varioref clever, and reuses its work to improve its own workings. 
+									% The cleveref package must be loaded after all other packages that don’t specifically support it.
+									% Therefore, to be safe, we declare it as last in the document's preamble.
+									% Also note that all \newtheorem definitions must be placed after the cleveref package is loaded.
+
+
+%%% About this LaTeX template: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This template should work with any (reasonably recent) full
+% installation of TeXLive or MikTeX. The "ecis2015" package loads a
+% number of other packages, so if some package is missing, please
+% install it using the package manager of your TeX distribution. In
+% particular, if the "tikz" package is missing, you may have to install
+% "pgf" or simply remove our example graphics (see figure example
+% below).
+%
+% The file "ecis2015.sty" should be placed somewhere in your TeX Path
+% (or simply in the same folder as your document).
+%
+% Please use PDFLaTeX to compile your document.
+%
+% You need not escape special characters or Umlauts like é ä ö ü ß (in 
+% fact, you shouldn't), as this source is inputenc'd in UTF-8.
+%
+% Note for BibTeX users: We use BibLaTeX for formatting, so we use Biber
+% as a sorting backend (default). 
+% If you still need to use the old BibTeX program, please change the 
+% BibLaTeX backend in the package file ("ecis2015.sty").
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% ------- mijn configs: --------- %%%
+%
+%% test stuff
+
+
+%% end test stuff
+
+
+%%
+%% Defining new theorem and -styles
+% Its documentation can be found at ftp://ftp.dante.de/pub/tex/macros/latex/contrib/ntheorem/ntheorem.pdf
+%\RequirePackage[thref, thmmarks, amsmath]{ntheorem}		% Use new theorems package as opposed to amsth, include <amsmath>-emulation by including it as an option
+
+% Allow to repeat a theorem number to, e.g., continue with a theorem such as an example, or to add something to an existing theorem
+% THIS UNFORTUNATELY DOES NOT WORK, producing a <Undefined control sequence \n <argument> \rep@title \n l.38 \newtheorem*{rep@theorem}{\rep@title}>-error
+%\makeatletter
+%\newtheorem*{rep@theorem}{\rep@title}
+%\newcommand{\newreptheorem}[2]{%
+%\newenvironment{rep#1}[1]{%
+% \def\rep@title{#2 \ref{##1}}%
+% \begin{rep@theorem}}%
+% {\end{rep@theorem}}}
+%\makeatother
+	
+% Now define the various theorems
+\theoremstyle{definition}
+\theoremstyle{break}	% The header for all theorems are followed by a newline
+% Examples 				-- are numbered by chapter, and carry an asterisk as closing symbol
+\theoremsymbol{\ensuremath{_\Box}}
+\newtheorem{mmexmp}{Example}[chapter]
+%\newreptheorem{mmexmp}{Example (cont'd)}
+% Theses   				-- have continuous numbering scheme, and still close with the asterisk
+\newtheorem{Thesis}{Thesis}
+% Research Questions 	-- are enclosed with horizontal lines, and probably (?) close with the asterisk
+\theoremprework{\hrule}
+\theorempostwork{\hrule}
+\newtheorem{mmthrq}{Research Question}
+% Assumption			-- are numbered by chapter, and carry an asterisk as closing symbol
+\newtheorem{mmasmptn}{Assumption}[chapter]
+% Definitions 			-- are numbered by chapter, and carry a black square as closing symbol
+\theoremsymbol{\ensuremath{_\blacksquare}}
+\newtheorem{mmdef}{Definition}[chapter]
+% Design Principles		-- are numbered by chapter, and carry an open diamond as closing symbol
+\theoremsymbol{\ensuremath{_\diamond}}
+\newtheorem{mmdesignprinciple}{Design Principle}[chapter]
+
+
+\crefname{mmexmp}{Example}{Examples}
+\crefname{Thesis}{Thesis}{Theses}
+\crefname{mmthrq}{Research Question}{Research Questions}
+\crefname{mmdef}{Definition}{Definitions}
+\crefname{mmdesignprinciple}{Design Principle}{Design Principles}
+\crefname{mmasmptn}{Assumption}{Assumptions}
+
+
+% Equations				-- are numbered by chapter
+\numberwithin{equation}{chapter}
+% Figures				-- are numbered by chapter
+\numberwithin{figure}{chapter}
+
+% package backnaur: modify the production operator
+\renewcommand*{\bnfpo}{\textnormal{::=}}
+
+% create more mnemonic term for the check-mark
+\newcommand*\OK{\ding{51}}
+
+% Create a typical column header, the content of which is rotated
+\newcolumntype{R}[2]{%
+ >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
+ l%
+ <{\egroup}%
+}
+\newcommand*\rot{\multicolumn{1}{R{60}{1em}}}% no optional argument here, please!
+
+% Create a command for words in a box. Refer to http://tex.stackexchange.com/questions/86569/creating-uniformly-sized-boxes-around-text, and 
+%                                      for the colors to http://tex.stackexchange.com/questions/136742/changing-background-color-of-text-in-latex
+\newcommand{\mywordbox}[1]{%
+  {% open a group for a local setting
+   \setlength{\fboxsep}{-2\fboxrule}% the rule will be inside the box boundary
+   \hspace{1pt}\fcolorbox{gray!20}{blue!5}{\hspace{2pt}\strut\textbf{#1}\hspace{2pt}}\hspace{1pt}% print the box, with some padding at the left and right
+%   \fbox{\hspace{2pt}\strut\text{#1}\hspace{2pt}}% print the box, with some padding at the left and right
+%   \fbox{\hspace{2pt}\strut#1\hspace{2pt}}% print the box, with some padding at the left and right
+  }% close the group
+}
+
+
+%%% Enter Document Info here: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%datetime package config %%%
+\renewcommand{\dateseparator}{-}
+%\renewcommand{\timeseparator}{}
+\settimeformat{hhmmsstime}  
+
+\maintitle{$title$} % ← Don't use UPPERCASE here, we do that automatically.
+\subtitle{$subtitle$}
+\shorttitle{$shorttitle$} % ← This goes into the header.
+\category{$category$} % 
+$if(version)$\versionmgt{version: $version$}$endif$
+\date{\today}
+
+
+\authors{% Separate authors by a "\par" or blank line.
+$for(author)$
+$if(author.name)$
+$author.name$$if(author.affiliation)$, $author.affiliation$$endif$
+$if(author.email)$, $author.email$ \\$endif$
+$else$
+$author$$if(affiliation)$, $affiliation$, $endif$\\
+$endif$
+\par
+$endfor$
+}
+\shortauthors{Paul Brandt -- $category$} % ← This goes into the header. 
+
+%%% BibTeX: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addbibresource{$bibliography$} % ← Your .bib file, if you're using BibTeX
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Glossaries: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+$if(toc)$
+\makeglossaries
+$endif$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+% Set the properties of the easylist
+
+%\pagebreak
+
+% --- Abstract --- --- --- --- ---
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+
+% --- Keywords --- --- --- --- ---
+$if(kw)$		% use option -M kw	
+\begin{keywords}
+$tags$
+\end{keywords}
+$endif$
+
+
+%\pagebreak
+% --- table of contents --- --- --- --- ---
+%
+% add table of contents to pdf bookmarks
+$if(toc)$		% use option --toc
+\tableofcontents
+\pagebreak
+\printglossaries
+$endif$
+
+% add list of todo's that are outstanding for this text
+\listoftodos
+
+\pagebreak
+
+% --- main matter --- --- --- --- ---
+
+$body$
+
+% --- index --- --- --- --- ---
+
+
+\printindex
+
+%ACKNOWLEDGMENTS are optional
+%\chapter*{Acknowledgments}
+% % $ack$
+\end{document}

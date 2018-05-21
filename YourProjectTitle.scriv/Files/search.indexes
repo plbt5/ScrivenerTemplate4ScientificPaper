@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchIndexes Version="1.0">
+    <Documents>
+        <Document ID="3">
+            <Title>meta-data</Title>
+            <Text>---
+title:  'A title'  
+subtitle: 'its sub-title'  
+author:  
+- name: Paul Brandt  
+  affiliation: Eindhoven University of Technology; Netherlands Organization of Applied Scientific Research TNO, Den Haag, The Netherlands   
+- name: Twan Basten  
+  affiliation: Eindhoven University of Technology, Eindhoven, The Netherlands 
+version: '1'  
+category: Maak een eigen categorie (wordt branch in git), of laat t leeg  
+ack: &lt;!-- This work was supported by the EC, through the RECAP project, part of the Interreg IVB NWE Programme. --&gt;    
+tags: &lt;!-- semantic interoperability, semantic mediations, semantic conflicts, semantic concerns, semantic protocols, remote patient monitoring --&gt;  
+bibliography: src/bib/bibliography.bib  
+csl: templates/my-basic-reference-style.csl  
+abstract: |  Het abstract mag 
+    verschillende regels beslaan.
+  Zolang het maar eindigt met 3 puntjes EN NIKS MEER
+   
+...</Text>
+        </Document>
+        <Document ID="4">
+            <Title>Introduction</Title>
+            <Synopsis>1 page
+100 readers
+
+1: Describe the Problem.
+* not formal but an intuition 
+* not everything but 
+* .. hard enough to be interesting, and
+* .. simple enough to be solvable
+
+2: State you claims
+* as bullit list with 
+* forward references to sections where you substantiate them.
+* Claims should be described such that you can fail their deliverance: &quot;Gosh, if they really can, exciting, I must read on&quot;
+* Contributions are the properties of the solution.
+* This list *drives* the paper
+</Synopsis>
+            <Text>!!Readers will fall like flies here, so use your precious, gold-plated words here where they can hang on to!!
+&lt;Describe the Problem&gt;
+
+&lt;State you claims&gt;</Text>
+        </Document>
+        <Document ID="5">
+            <Title>MMD cheat sheet</Title>
+        </Document>
+        <Document ID="6">
+            <Title>Text and Formats</Title>
+        </Document>
+        <Document ID="7">
+            <Title>Proprietary encodings</Title>
+        </Document>
+        <Document ID="8">
+            <Title>Authors</Title>
+        </Document>
+        <Document ID="9">
+            <Title>Footnotes, Images and Links</Title>
+        </Document>
+        <Document ID="10">
+            <Title>References</Title>
+        </Document>
+        <Document ID="11">
+            <Title>Bullits and numbered lists</Title>
+        </Document>
+        <Document ID="12">
+            <Title>Tables</Title>
+        </Document>
+        <Document ID="13">
+            <Title>Glossary</Title>
+        </Document>
+        <Document ID="14">
+            <Title>Math</Title>
+        </Document>
+        <Document ID="15">
+            <Title>Definitions, proofs etc</Title>
+        </Document>
+        <Document ID="16">
+            <Title>-ise/-ize</Title>
+        </Document>
+        <Document ID="17">
+            <Title>Progress &amp; Planning</Title>
+        </Document>
+        <Document ID="18">
+            <Title>Progress &amp; Planning</Title>
+            <Text>Because Scrivener (Windows) is not yet capable of calculating the target word count of a section from its subsections, the progress indicator is not very helpful in showing your actual progress. We can realise this by the use of excel.
+
+To that end, you need to add two pieces of information to the scrivener meta-data:
+
+1. Include a custom meta-data parameter, let’s call it ‘level’. The purpose of this parameter is to provide for the level of the section. Unfortunately, you have to fill this manually because the &lt;$hn&gt; placeholder tag (see Scrivener manual, Appendix D, Table D.2) is only effective on compiling, which has no use here. Use level = 1 for all first level scrivenings (document), etc.
+2. Fill the Target parameter as you would expect, however, place a negative number for the section that needs to be calculated from its subsections, e.g., -1
+
+Now export the “Outliner Contents as CSV”, and import it into Excel. Create in excel as many additional columns as levels and name them 1, 2, 3, 4, etc. Just the figure, no additional characters. Then, define in the cells for these columns the following formula’s:
+
+Column 1: =IF($Q2=S$1,IF($Q3&gt;=S$1,IF($N2&gt;0,SUM(S3,$N2),SUM(S3,T3)),$N2),IF($Q2&gt;S$1,S3,0))
+Column 2: =IF($Q2=T$1,IF($Q3&gt;=T$1,IF($N2&gt;0,SUM(T3,$N2),SUM(T3,U3)),$N2),IF($Q2&gt;T$1,T3,0))
+Column 3: =IF($Q2=U$1,IF($Q3&gt;=U$1,IF($N2&gt;0,SUM(U3,$N2),SUM(U3,V3)),$N2),IF($Q2&gt;U$1,U3,0))
+...
+Last column: =IF($Q2=V$1,IF($Q3&gt;=V$1,IF($N2&gt;0,SUM(V3,$N2),V3),$N2),0)
+
+And add one additional column that will give you the True Target (calculated) as:
+Column TrueTarget: =IF(N2&gt;=0,N2,OFFSET(R2,1,Q2+1,1,1))
+
+Explanation:
+Columns 1, 2, 3 etc. will calculate the cumulative figures, from ground to top, for the level that is indicated by the name of the column. It does this from the following parameters (indicated for the first level):
+* Q2 = your ‘level’ parameter
+* S1 = the name of your column == the level that that column will cumulate
+* N2 = the Target parameter (with negative numbers indicating the sections of interest)
+* T3 = the previous level, the value of which represents the cumulative targets of the subsections
+
+
+
+</Text>
+        </Document>
+        <Document ID="19">
+            <Title>-ise/-ize</Title>
+            <Text>In British English, most words ending in -ise can also be spelt with ize. Exceptions are words in two syllables, e.g., surprise, and advertise and analyse. 
+Therefore, play safe and consistently use -ise.
+
+In American English, only -ize is used. 
+
+* In Americal English, final -l is not usually doubled in an unstressed syllable, whilst in British English it is, e.g., US traveler, leveling, becomes GB traveller, levelling.
+* Some endings in -ter in AE become -tre in BE: US theater, center become GB theatre, centre.
+* Some endings in -or in AE become -our in BE: US labor, color become GB labour, colour.
+* Some endings in -og in AE become -ogue in BE: US catalog, analog become GB catalogue, analogue.
+* US defense, offense, pretense become BE defence, offence, pretence. However, US practice becomes GB practise.
+
+That versus which:
+
+* “that/who” (no comma) is used to single out (restrict) from many possibilities the one and only that is referred to: 
+    * The painting that was hanging in the foyer was stolen --&gt; from all paintings in the house, one hung in the foyer and that particular one was stolen;
+    * The suspect who has red hair committed the crime --&gt; from all suspects indeed the perpetrator was the only red haired person;
+* “which,/who, ” (with comma) is used to add incidental information (unrestricted) about the subject that is referred to, however, not to single it out:
+    * The painting, which was hanging in the foyer, was stolen --&gt; many paintings were hanging in the foyer, and the one that was stolen was one of them;
+    * The suspect, who owns a red car, committed the crime --&gt; although the perpetrator owns a red car, this does not necessarily imply that from all suspects the perpetrator and only the perpetrator owns a red car. Any or all of the suspects might own a red car.
+* hence, “who” refers to a restrictive clause while “who, ” refers to a non-restrictive (informative) clause.
+
+
+&lt;!-- einde opsomming --&gt;</Text>
+        </Document>
+        <Document ID="20">
+            <Title>Definitions, proofs etc</Title>
+            <Text>Definitions, Theorems, Proofs and more are not possible in MMD. To that end, apply LateX rules and include appropriate libraries in the latex template, see also https://en.wikibooks.org/wiki/LaTeX/Theorems. The suggestions below are therefore not MMD cheats but LateX cheats instead.
+
+As a result, the MMD-lists do not work anymore and we need to make use of Latex-lists, as follows:
+\begin{itemize}[label={-}]
+\item here is the first item
+\item Here is the second item
+\end{itemize}
+
+
+\begin{mmdef}[definitie onderwerp]\label{def:my-unique-reference}
+Here is a new definition
+\end{mmdef}
+
+\begin{mmexmp}\label{ex:my-unique-reference}
+Here is a new example
+\end{mmexmp}
+
+\begin{mmdp}
+\end{mmdp}
+
+\begin{mmprf}
+\end{mmprf}
+
+\begin{mmthrq}\label{:rq:my-unique-reference}
+Here is a new research question
+\end{mmthrq}
+
+## LaTeX header definition ##
+These definitions/proofs/etc. are based on a package for theorems, i.e., amsthm. Before the above definitions/proofs/etc can work, we need to import and configure the Theorem package. This requires a LaTeX header definition, as follows:
+\usepackage{amsthm}
+
+\newtheorem{mmexmp}{Example}[section]
+\newtheorem{mmthrq}{Research Question}
+\newtheorem{mmdef}{Definition}</Text>
+        </Document>
+        <Document ID="21">
+            <Title>Math</Title>
+            <Text>Mathematical formulae are not possible in MMD. To that end, apply LateX rules and include appropriate libraries in the latex template, see also https://en.wikibooks.org/wiki/LaTeX/Mathematics. The suggestions below are not MMD cheats but LateX cheats instead.
+
+\usepackage{mathtools}
+
+Mathmode: 
+
+* Inline: TEXT encompassed with \( ... \) of $ ... $
+* Paragraph: wat was dit ook alweer?
+
+If you are typing text normally, you are said to be in text mode, but while you are typing within one of those mathematical environments, you are said to be in math mode that has some differences compared to the text mode:
+Most spaces and line breaks do not have any significance, as all spaces are either derived logically from the mathematical expressions, or have to be specified with special commands such as \quad
+Empty lines are not allowed. Only one paragraph per formula.
+Each letter is considered to be the name of a variable and will be typeset as such. If you want to typeset normal text within a formula (normal upright font and normal spacing) then you have to enter the text using dedicated commands.
+The caret (^) character is used to raise something (superscript), and the underscore (_) is for lowering (subscript). If more than one expression is raised or lowered, they should be grouped using curly braces ({ and }).
+
+
+$\mathpzc{ALC}$
+</Text>
+        </Document>
+        <Document ID="22">
+            <Title>Glossary</Title>
+            <Text>Unfortunately, there is as of yet no representation of definition of glossary terms. One definition has been suggested:
+[^glossaryfootnote]: glossary: term (optional sort key)
+    The actual definition belongs on a new line, and can continue on
+    just as other footnotes.
+This would allow for footnotes to be specified as glossary terms. The *term* is the item that belongs in the glossary. The *sort key* is optional, and is used to specify that the term should appear somewhere else in the glossary (which is sorted in alphabetical order).</Text>
+        </Document>
+        <Document ID="23">
+            <Title>Tables</Title>
+            <Text>Tables
+Pipe tables
+Pipe tables look like this:
+
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|1|1|1|1
+
+  : Demonstration of pipe table syntax {#anchor-for-its-reference}.
+
+The syntax is the same as in PHP markdown extra. The beginning and ending pipe characters are optional, but pipes are required between all columns. The colons indicate column alignment as shown. The header can be omitted, but the horizontal line must still be included, as it defines column alignments. Since the pipes indicate column boundaries, columns need not be vertically aligned, as the last row indicates.
+The cells of pipe tables cannot contain block elements like paragraphs and lists, and cannot span multiple lines, nor wrap text within cells.
+
+Grid tables look like this:
+: Sample grid table.
+
++---------------+---------------+--------------------+
+| Fruit         | Price         | Advantages         |
++===============+===============+====================+
+| Bananas       | $1.34         | - built-in wrapper |
+|               |               | - bright color     |
++---------------+---------------+--------------------+
+| Oranges       | $2.10         | - cures scurvy     |
+|               |               | - tasty            |
++---------------+---------------+--------------------+
+The row of =’s separates the header from the table body, and can be omitted for a headerless table. The cells of grid tables may contain arbitrary block elements (multiple paragraphs, code blocks, lists, etc.). Alignments are not supported, nor are cells that span multiple columns or rows. 
+
+Multiline tables
+Multiline tables are also possible, and allow headers and table rows to span multiple lines of text (but cells that span multiple columns or rows of the table are not supported). Here is an example:
+-------------------------------------------------------------
+ Centered   Default           Right Left
+  Header    Aligned         Aligned Aligned
+----------- ------- --------------- -------------------------
+   First    row                12.0 Example of a row that
+                                    spans multiple lines.
+
+  Second    row                 5.0 Here's another one. Note
+                                    the blank line between
+                                    rows.
+-------------------------------------------------------------
+
+   : Here's the caption. It, too, may span
+multiple lines.
+
+These work like simple tables, but with the following differences:
+They must begin with a row of dashes, before the header text (unless the headers are omitted).
+They must end with a row of dashes, then a blank line.
+The rows must be separated by blank lines.
+In multiline tables, the table parser pays attention to the widths of the columns, and the writers try to reproduce these relative widths in the output. So, if you find that one of the columns is too narrow in the output, try widening it in the markdown source.
+Headers may be omitted in multiline tables as well as simple tables</Text>
+        </Document>
+        <Document ID="24">
+            <Title>Bullits and numbered lists</Title>
+            <Text>Bullits and numbered lists
+
+Bullit lists
+
+The bullets need not be flush with the left margin; they may be indented one, two, or three spaces. The bullet must be followed by whitespace, and preceded by a blank line. A list item may contain multiple paragraphs and other block-level content. However, subsequent paragraphs must be preceded by a blank line and indented four spaces or a tab. 
+
+  * Fruits
+
+    Continued paragraph belonging to Fruits.
+
+List items may include other lists. In this case the preceding blank line is optional. The nested list must be indented four spaces or one tab:
+
+* fruits
+    + apples
+        - macintosh
+        - red delicious
+
+Number lists
+
+Ordered lists work just like bulleted lists, except that the items begin with enumerators (numbers themselves are ignored) rather than bullets:
+2. First item
+1. Second item
+21. Third item
+
+Autonumbers
+
+(@one)  My first example will be numbered (1).
+(@)  My second example will be numbered (2).
+
+Explanation of example (@one).
+
+(@)  My third example will be numbered (3).</Text>
+        </Document>
+        <Document ID="25">
+            <Title>References</Title>
+            <Text>References are based on bibtex. To specify a bibliography file use *--bibliography &lt;myCitations.bib&gt;* at the command line, or, the YAML metadata field *bibliography*.
+
+Citations go inside square brackets and are separated by semicolons (note that NO SPACES surround the semicolon). Each citation must have a key, composed of ‘@’ + the citation identifier from the database, and may optionally have a prefix, a locator, and a suffix. Examples:
+
+* Blah blah [see @doe99, pp. 33-35;also @smith04, chap. 1].
+* Blah blah [@doe99, pp. 33-35, 38-39 and *passim*].
+* Blah blah [@smith04; @doe99].
+
+The citation identifier may contain special characters.</Text>
+        </Document>
+        <Document ID="26">
+            <Title>Footnotes, Images and Links</Title>
+            <Text>Footnotes
+
+By anchor 
+
+A footnote is a kind of anchor [^1] that refers to the actual text defined at the bottom of the page (or elsewhere in the text), like this:
+
+[^1]: the text of the footnote that the anchor refers to. The anchor id can be anything, as long as the carrot symbol precedes the id, e.g., [^this_is_a_very_long_footnote_id]
+
+Inline without anchor
+
+This inline footnote ^[the text of the footnote is included at the position of the anchor] is defined without anchor. Like the anchored footnote, the position of the placement of the footnote in the document is defined by meta-properties.
+
+Image inclusion
+Define the image inline as ![image caption](path\to\image.png){#image-ref-label .class width=30 height=20px}
+
+Or, use a short link in the text to indicate its position, such as:
+![image caption][image-def-label]
+And at the bottom of the page, include its definition with attributes. No matter how \cref{image-ref-label} is defined, you can always refer to its (type and) number with \(c)ref.
+
+[image-def-label]: path\to\image.png &quot;optional title&quot; {#image-ref-label .class width=30 key2=&quot;val 2&quot;}
+
+Internal links
+An explicit link has two parts, the link itself and the link definition, which may occur elsewhere in the document (either before or after the link).
+
+* The link itself consists of link text in square brackets, followed by a label in square brackets. (There can be space between the two.): [text that will be given a click-able link] [the-label-of-this-link-source]
+* The link definition consists of the bracketed label, followed by a colon and a space, followed by the URL, and optionally (after a space) a link title either in quotes or in parentheses, e.g., [my website]: http://foo.bar.baz (the link title)
+* Use the automatically generated identifier (Extension: auto_identifiers)
+	* See the [text about this link](#link-as-title-of-the-section).
+	* Or, implicitly, see the [text about this link] as placeholder and below its definition
+
+[text about this link](#link-as-title-of-the-section)
+
+References to chapter numbers and images
+This is not possible in MMD, currently. Some initiatives are being considered, though (REF). One way to solve this is to use latex code, as follows:
+
+Blahbllah, see \cref{the-section-id-as-referenced-by-MMD}. This will produce: “Blahbllah, see Section 2.1”
+
+Note the missing #-sign in the reference; the #-sign is an MMD-construct, not a latex construct. Furthermore, the cref (clever reference) package does not require the category to be named in the text (Section, Example, Chapter, Theorem, etc.), it will insert the correct one itself.
+
+This works for other forms of references as well, i.e., anything that can be given a label, by the following label definition: \label{my-label-name}. Again, note the missing #-sign in the label definition.
+
+External links
+  Blahblah blah blah blah. See [my website][], or [my website].
+
+[my website]: http://foo.bar.baz
+
+footnotes (extension: footnotes)
+Here’s a footnote reference [^1] and another.[^longnote]
+
+[^1]: Here is the footnote.
+[^longnote]: Here's one with multiple blocks.
+    Subsequent paragraphs are indented to show that they
+belong to the previous footnote.
+
+        { some.code }
+
+    The whole paragraph can be indented, or just the first
+    line.  In this way, multi-paragraph footnotes work like
+    multi-paragraph list items.
+
+This paragraph won't be part of the note, because it
+isn't indented.</Text>
+        </Document>
+        <Document ID="27">
+            <Title>Authors</Title>
+        </Document>
+        <Document ID="28">
+            <Title>Proprietary encodings</Title>
+            <Text>I have implemented a few proprietary, quasi-MMD codes that are translated by Scrivener to particular Latex codes.
+
+Quasi-MMD codes
+Latex code
+Implementation
+[|text]
+\mywordbox{text}
+The text is formatted with a small box:
+\newcommand{\mywordbox}[1]{%
+  {% open a group for a local setting
+   \setlength{\fboxsep}{-2\fboxrule}% the rule will be inside the box boundary
+   \hspace{1pt}\fcolorbox{gray!20}{blue!5}{\hspace{2pt}\strut\textbf{#1}\hspace{2pt}}\hspace{1pt} % print the box, with some padding at the left and right
+  }% close the group
+}
+[*text]
+\index{text}text
+With multiple passes of LaTeX, pdfLaTeX, LuaTeX, etc., text will become an entry in the index
+
+
+
+
+
+</Text>
+        </Document>
+        <Document ID="29">
+            <Title>Text and Formats</Title>
+            <Text>Letter format
+
+**Bold face**
+
+*Italic face*
+
+`literals`
+
+Text with ^superscript^ and ~subscript~
+
+Text with ~~strike out~~
+
+Code block:
+~~~python // ← this python thingy is optional, but might result in syntax highlighting
+define foobar() {
+    print &quot;Welcome to flavor country!&quot;;
+}
+~~~
+
+Text
+Create lorum ipsum dummy text with \usepackage{blindtext}
+\blindtext
+
+</Text>
+        </Document>
+        <Document ID="30">
+            <Title>Abstract</Title>
+            <Synopsis>4 sentences
+100 readers
+
+I changed this into the shown structure:
++ drives your thinking/writing
+- too many sentences
+
+In 4 sentences (from Kent Beck):
+1: State the problem
+2: Tell why it's an interesting problem
+3: Tell what your solution achieves (NOT what it is)
+4: Tell the consequences of using your solution</Synopsis>
+            <Text>*Background:* 3 sentences
+  
+*Objective:* 1 sentence
+
+*Method:* 3 sentences
+
+*Results:* 3-4 sentences
+ 
+*Conclusions:* 1 sentence</Text>
+        </Document>
+        <Document ID="31">
+            <Title>Readme</Title>
+            <Text>This is an excerpt from “How to read a research aper: Seven simple suggestions” by Simon P. Jones (see the youtube recording of his colloquium).
+
+The core purpose of your paper is: Convey a reusable idea, and NOT something new (This is Design Science, not natural science, remember!). Infect the mind of your reader: no matter where they stop reading, they should be able to spread your idea as a virus.
+
+Suggestion #1: Writing your paper *IS* your research
+
+Idea --&gt; start writing --&gt; use paper to enforce the relevant parts of the research.
+
+Research = Communicating, whiteboarding
+writing  = doing research = how you develop your idea
+
+Suggestion #2: Identify your idea:
+An idea is:
+
+* a valuable starting point, always!
+* a re-usable insight
+* useful to the reader
+* one “ping” 
+
+Suggestion #3: Tell a Story, the narrative of which is:
+- Here is a problem
+- It’s an interesting problem (motivation)
+- It’s an unsolved problem (why is it unsolved?)
+- Here is my idea (the payload of the paper)
+- My idea works (details and data)
+- Here is how it compares to other peoples approaches.
+
+As a result, wherever readers stop reading you want to have given them a take-away already. You’ve infected them such that they can speak about it.
+
+Your text should support the reader. DO NOT LEAVE YOUR USERS TO GUESS:
+
+-------------------------------------------------------------------------------------------------
+   NOT                              BUT instead:
+  
+----------------------------------- -------------------------------------------------------------
+“We describe the system”            “We give syntax and semantics of language that supports A ...
+                                     (Sect. A). Its feature are ...”
+
+“We study the properties”           “We proof that property X is sound, decidable, ...”
+
+“We have evaluated the system in    “We have built X and used it to implement Y (Sect. B) and
+ practice”                           the positive effects are... ”
+
+-------------------------------------------------------------------------------------------------
+
+Be 100% explicit: “The main idea of the paper is ....”</Text>
+        </Document>
+        <Document ID="32">
+            <Title>The Problem</Title>
+            <Synopsis>1 page
+10 readers</Synopsis>
+        </Document>
+        <Document ID="33">
+            <Title>My Idea</Title>
+            <Synopsis>2 pages
+10 readers</Synopsis>
+        </Document>
+        <Document ID="34">
+            <Title>The Bloody Details</Title>
+            <Synopsis>5 pages
+3 readers</Synopsis>
+        </Document>
+        <Document ID="35">
+            <Title>Related work</Title>
+            <Synopsis>1-2 pages
+10 readers</Synopsis>
+        </Document>
+        <Document ID="36">
+            <Title>Conclusions and further work</Title>
+            <Synopsis>1/2 page</Synopsis>
+        </Document>
+    </Documents>
+</SearchIndexes>

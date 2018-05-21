@@ -1,0 +1,61 @@
+{\rtf1\ansi\ansicpg1252\uc1\deff0
+{\fonttbl{\f0\fmodern\fcharset0\fprq2 CourierNewPSMT;}{\f1\fmodern\fcharset0\fprq2 CourierNewPS-BoldMT;}{\f2\fmodern\fcharset0\fprq2 CourierNewPS-ItalicMT;}}
+{\colortbl;\red0\green0\blue0;\red255\green255\blue255;\red0\green0\blue255;}
+{\*\listtable
+{\list\listtemplateid1\listhybrid
+{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\leveltext\'01\loch\af0\hich\af0\dbch\af0\uc1\u9679\'3F;}{\levelnumbers;}\f0\fs24\b0\i0\fi-360\li720\lin720}{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw12240\paperh15840\margl1800\margr1800\margt1440\margb1440\fet2\ftnbj\aenddoc
+\pgnrestart\pgnstarts0
+\pard\plain \ltrch\loch {\f1\fs36\b1\i0 Tables}
+\par\plain {\f1\fs26\b1\i0 Pipe tables}
+\par\plain {\f0\fs24\b0\i0 Pipe tables look like this:}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 | Right | Left | Default | Center |}
+\par\plain {\f0\fs24\b0\i0 |------:|:-----|---------|:------:|}
+\par\plain {\f0\fs24\b0\i0 |   12  |  12  |    12   |    12  |}
+\par\plain {\f0\fs24\b0\i0 |  123  |  123 |   123   |   123  |}
+\par\plain {\f0\fs24\b0\i0 |1|1|1|1}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0   : Demonstration of pipe table syntax \{#anchor-for-its-reference\}.}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 The syntax is }{\field{\*\fldinst HYPERLINK "http://michelf.ca/projects/php-markdown/extra/#table"}{\fldrslt\f0\fs24\b0\i0\ul\ulc0\cf3 the same as in PHP markdown extra}}{\f0\fs24\b0\i0 . The }{\f2\fs24\b0\i1 beginning}{\f0\fs24\b0\i0  and }{\f2\fs24\b0\i1 ending pipe characters are optional}{\f0\fs24\b0\i0 , but pipes are required between all columns. The colons indicate column alignment as shown. The header can be omitted, but the horizontal line must still be included, as it defines column alignments. Since the pipes indicate column boundaries, columns need not be vertically aligned, as the last row indicates.}
+\par\plain {\f0\fs24\b0\i0 The cells of pipe tables cannot contain block elements like paragraphs and lists, and cannot span multiple lines, nor wrap text within cells.}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f1\fs26\b1\i0 Grid tables look like this:}
+\par\plain {\f0\fs24\b0\i0 : Sample grid table.}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 +---------------+---------------+--------------------+}
+\par\plain {\f0\fs24\b0\i0 | Fruit         | Price         | Advantages         |}
+\par\plain {\f0\fs24\b0\i0 +===============+===============+====================+}
+\par\plain {\f0\fs24\b0\i0 | Bananas       | $1.34         | - built-in wrapper |}
+\par\plain {\f0\fs24\b0\i0 |               |               | - bright color     |}
+\par\plain {\f0\fs24\b0\i0 +---------------+---------------+--------------------+}
+\par\plain {\f0\fs24\b0\i0 | Oranges       | $2.10         | - cures scurvy     |}
+\par\plain {\f0\fs24\b0\i0 |               |               | - tasty            |}
+\par\plain {\f0\fs24\b0\i0 +---------------+---------------+--------------------+}
+\par\plain {\f0\fs24\b0\i0 The row of }{\f0\fs24\b0\i0 =\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92}{\f0\fs24\b0\i0 s separates the header from the table body, and can be omitted for a headerless table. The cells of grid tables may contain arbitrary block elements (multiple paragraphs, code blocks, lists, etc.). Alignments are not supported, nor are cells that span multiple columns or rows. }
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f1\fs26\b1\i0 Multiline tables}
+\par\plain {\f1\fs24\b1\i0 Multiline tables}{\f0\fs24\b0\i0  are also possible, and allow headers and table rows to span multiple lines of text (but cells that span multiple columns or rows of the table are not supported). Here is an example:}
+\par\plain {\f0\fs24\b0\i0 -------------------------------------------------------------}
+\par\plain {\f0\fs24\b0\i0  Centered   Default           Right Left}
+\par\plain {\f0\fs24\b0\i0   Header    Aligned         Aligned Aligned}
+\par\plain {\f0\fs24\b0\i0 ----------- ------- --------------- -------------------------}
+\par\plain {\f0\fs24\b0\i0    First    row                12.0 Example of a row that}
+\par\plain {\f0\fs24\b0\i0                                     spans multiple lines.}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0   Second    row                 5.0 Here's another one. Note}
+\par\plain {\f0\fs24\b0\i0                                     the blank line between}
+\par\plain {\f0\fs24\b0\i0                                     rows.}
+\par\plain {\f0\fs24\b0\i0 -------------------------------------------------------------}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0    : Here's the caption. It, too, may span}
+\par\plain {\f0\fs24\b0\i0 multiple lines.}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 These work like simple tables, but with the following differences:}
+\par\pard\plain \li680\fi-680\ltrch\loch \ls1\ilvl0{\listtext\f0\fs24\b0\i0	\loch\af0\hich\af0\dbch\af0\uc1\u9679\'3F	}{\f0\fs24\b0\i0 They must begin with a row of dashes, before the header text (unless the headers are omitted).}
+\par\plain \ilvl0{\listtext\f0\fs24\b0\i0	\loch\af0\hich\af0\dbch\af0\uc1\u9679\'3F	}{\f0\fs24\b0\i0 They must end with a row of dashes, then a blank line.}
+\par\plain \ilvl0{\listtext\f0\fs24\b0\i0	\loch\af0\hich\af0\dbch\af0\uc1\u9679\'3F	}{\f0\fs24\b0\i0 The rows must be separated by blank lines.}
+\par\pard\plain \ltrch\loch {\f0\fs24\b0\i0 In multiline tables, the table parser pays attention to the widths of the columns, and the writers try to reproduce these relative widths in the output. So, if you find that one of the columns is too narrow in the output, try widening it in the markdown source.}
+\par\plain {\f0\fs24\b0\i0 Headers may be omitted in multiline tables as well as simple tables}}

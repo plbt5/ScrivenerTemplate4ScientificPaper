@@ -1,0 +1,15 @@
+1 page
+100 readers
+
+1: Describe the Problem.
+* not formal but an intuition 
+* not everything but 
+* .. hard enough to be interesting, and
+* .. simple enough to be solvable
+
+2: State you claims
+* as bullit list with 
+* forward references to sections where you substantiate them.
+* Claims should be described such that you can fail their deliverance: "Gosh, if they really can, exciting, I must read on"
+* Contributions are the properties of the solution.
+* This list *drives* the paper

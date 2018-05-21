@@ -1,0 +1,67 @@
+{\rtf1\ansi\ansicpg1252\uc1\deff0
+{\fonttbl{\f0\fmodern\fcharset0\fprq2 CourierNewPSMT;}{\f1\fmodern\fcharset0\fprq2 CourierNewPS-BoldMT;}{\f2\fmodern\fcharset0\fprq1 Courier New,courier;}}
+{\colortbl;\red0\green0\blue0;\red255\green255\blue255;}
+\paperw12240\paperh15840\margl1800\margr1800\margt1440\margb1440\fet2\ftnbj\aenddoc
+\pgnrestart\pgnstarts0
+\pard\plain \ltrch\loch {\f1\fs36\b1\i0 Footnotes}
+\par\pard\plain \tx1899\ltrch\loch \f0\fs24\b0\i0
+\par\pard\plain \ltrch\loch {\f1\fs26\b1\i0 By anchor}{\f1\fs24\b1\i0  }
+\par\pard\plain \tx1899\ltrch\loch \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 A footnote is a kind of anchor [^1] that refers to the actual text defined at the bottom of the page (or elsewhere in the text), like this:}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 [^1]: the text of the footnote that the anchor refers to. The anchor id can be anything, as long as the carrot symbol precedes the id, e.g., [^this_is_a_very_long_footnote_id]}
+\par\plain \f0\fs24\b0\i0
+\par\pard\plain \ltrch\loch {\f1\fs26\b1\i0 Inline without anchor}
+\par\pard\plain \tx1899\ltrch\loch \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 This inline footnote ^[the text of the footnote is included at the position of the anchor] is defined without anchor. Like the anchored footnote, the position of the placement of the footnote in the document is defined by meta-properties.}
+\par\plain \f0\fs24\b0\i0
+\par\pard\plain \ltrch\loch {\f1\fs36\b1\i0 Image inclusion}
+\par\plain {\f0\fs24\b0\i0 Define the image inline as ![}{\f0\fs24\b0\i0 image caption}{\f0\fs24\b0\i0 ](}{\f0\fs24\b0\i0 path\\to\\image.png}{\f0\fs24\b0\i0 )\{#}{\f0\fs24\b0\i0 image-ref-label}{\f0\fs24\b0\i0  .class width=30 height=20px\}}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 Or, use a short link in the text to indicate its position, such as:}
+\par\plain {\f0\fs24\b0\i0 ![image caption][image-def-label]}
+\par\plain {\f0\fs24\b0\i0 And at the bottom of the page, include its definition }{\f0\fs24\b0\i0 with attributes}{\f0\fs24\b0\i0 . No matter how \\cref\{image-ref-label\} is defined, you can always refer to its (type and) number with \\(c)ref.}
+\par\pard\plain \ltrch\loch \f0\fs24\b0\i0
+\par\plain {\f2\fs24 [}{\f0\fs24\b0\i0 image-def-label}{\f2\fs24 ]: }{\f0\fs24\b0\i0 path\\to\\image.png}{\f2\fs24  "optional title" \{#}{\f0\fs24\b0\i0 image-ref-label}{\f2\fs24  .class }{\f0\fs24\b0\i0 width=30}{\f2\fs24  key2="val 2"\}}
+\par\pard\plain \ltrch\loch \f0\fs24\b0\i0
+\par\plain {\f1\fs26\b1\i0 Internal links}
+\par\plain {\f0\fs24\b0\i0 An explicit link has two parts, the link itself and the link definition, which may occur elsewhere in the document (either before or after the link).}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 * The link itself consists of link text in square brackets, followed by a label in square brackets. (There can be space between the two.): [text that will be given a click-able link] [the-label-of-this-link-source]}
+\par\plain {\f0\fs24\b0\i0 * The link definition consists of the bracketed label, followed by a colon and a space, followed by the URL, and optionally (after a space) a link title either in quotes or in parentheses, e.g., [my website]: http://foo.bar.baz (the link title)}
+\par\plain {\f0\fs24\b0\i0 * Use the automatically generated identifier (}{\f1\fs24\b1\i0 Extension: auto_identifiers}{\f0\fs24\b0\i0 )}
+\par\plain {\f0\fs24\b0\i0 \tab * See the [text about this link](#link-as-title-of-the-section).}
+\par\plain {\f0\fs24\b0\i0 \tab * Or, implicitly, see the [text about this link] as placeholder and below its definition}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 [text about this link](#link-as-title-of-the-section)}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f1\fs26\b1\i0 References to chapter numbers and images}
+\par\plain {\f0\fs24\b0\i0 This is not possible in MMD, currently. Some initiatives are being considered, though (REF). One way to solve this is to use latex code, as follows:}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 Blahbllah, see \\cref\{the-section-id-as-referenced-by-MMD\}. This will produce: \loch\af0\hich\af0\dbch\af0\uc1\u8220\'93Blahbllah, see Section 2.1\u8221\'94}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 Note the missing #-sign in the reference; the #-sign is an MMD-construct, not a latex construct. Furthermore, the cref (clever reference) package does not require the category to be named in the text (Section, Example, Chapter, Theorem, etc.), it will insert the correct one itself.}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 This works for other forms of references as well, i.e., anything that can be given a label, by the following label definition: \\label\{my-label-name\}. Again, note the missing #-sign in the label definition.}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f1\fs26\b1\i0 External links}
+\par\plain {\f0\fs24\b0\i0   Blahblah blah blah blah. See [my website][], or [my website].}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 [my website]: http://foo.bar.baz}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f1\fs36\b1\i0 footnotes (extension: footnotes)}
+\par\plain {\f0\fs24\b0\i0 Here\loch\af0\hich\af0\dbch\af0\uc1\u8217\'92s a footnote reference [^1] and another.[^longnote]}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 [^1]: Here is the footnote.}
+\par\plain {\f0\fs24\b0\i0 [^longnote]: Here's one with multiple blocks.}
+\par\plain {\f0\fs24\b0\i0     Subsequent paragraphs are indented to show that they}
+\par\plain {\f0\fs24\b0\i0 belong to the previous footnote.}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0         \{ some.code \}}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0     The whole paragraph can be indented, or just the first}
+\par\plain {\f0\fs24\b0\i0     line.  In this way, multi-paragraph footnotes work like}
+\par\plain {\f0\fs24\b0\i0     multi-paragraph list items.}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 This paragraph won't be part of the note, because it}
+\par\plain {\f0\fs24\b0\i0 isn't indented.}}
