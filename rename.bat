@@ -5,7 +5,7 @@
 ::
 :: Usage:  RENAME  myProjectName [git@host:user, e.g., git@github.com:user]
 ::   
-::Note: Do not append repo name with slash (/)!
+::Note: Do not append repo name ('myProjectName') with slash (/)!
 :: ==============
 
 :: Check Windows version
