@@ -1,5 +1,13 @@
 @ECHO OFF
 
+:: ==============
+:: Clone and rename the Scrivener project to your likings
+::
+:: Usage:  RENAME  myProjectName [git@host:user, e.g., git@github.com:user]
+::   
+::Note: Do not append repo name with slash (/)!
+:: ==============
+
 :: Check Windows version
 SET Error=This batch file requires Windows XP or later
 IF NOT "%OS%"=="Windows_NT" GOTO Syntax
@@ -62,7 +70,7 @@ SET /P answer=<hit any key to start updating git>
 :: Update git with the latest changes
 ::
 git add -u
-git commit -m "Renamed project to %newname%.scriv, modified YAML meta-data"
+git commit -m "Initialised Scrivener project as %newname%.scriv, modified YAML meta-data"
 ECHO.
 ECHO Committed changes to %newname%
 ECHO.
@@ -70,11 +78,12 @@ ECHO.
 ::
 :: Push to remote
 ::
-ECHO Adding a remote to this local repo:
 IF "%RemoteRepo%"=="" (
-	SET /P RemoteRepo=Enter the remote git url for %newname% (https://github.com/user), or <return> to skip
+	ECHO Adding a remote git server to this local repo:
+	SET /P RemoteRepo=Enter the remote git url for %newname% (e.g., https://github.com/user), or <return> to skip
 	IF "%RemoteRepo%"=="" GOTO Getlost
 )
+ELSE ECHO Adding %RemoteRepo% as remote to this local repo:
 git remote add origin %RemoteRepo%/%newname%.git
 git push
 
@@ -105,10 +114,10 @@ SET Error=
 
 ECHO.
 ECHO rename.bat,  Version 0.1 for Windows XP and later
-ECHO Rename the Scrivener project to your likings
+ECHO Clone and rename the Scrivener project to your likings
 ECHO.
-ECHO Usage:  RENAME  myProjectName [git@host:user, e.g., git@github.com:user]
-ECHO   Do not append / to repo!
+ECHO Usage:  RENAME  myRepoName [git@host:user, e.g., git@github.com:user]
+ECHO   Do not append repo name with slash (/)!
 ECHO.
 ECHO Written by Paul Brandt, TNO, The Netherlands
 ECHO Acknowledging: 
