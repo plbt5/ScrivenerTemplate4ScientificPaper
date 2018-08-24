@@ -3,6 +3,10 @@
     <Documents>
         <Document ID="3">
             <Title>meta-data</Title>
+            <Synopsis>Usage: 
+The meta-data is formatted and used as YAML-block. This results in variables that can be used by the text processor, i.e., LaTeX. For this to work this YAML-block must be included as the very first part of the LaTeX source document (or as a separate side-document that is specified as such in the *.tex template). Scrivener can produce a YAML-block in two ways: either as introducing it to its comiler as the first document in the set, or by adding metadata variables in the configuration to the compile action. 
+
+I'm not sure that a combination of both appraches will work, except, possibly, by compling this meta-data document into a separate side document and not taking it into consideration anymore when compiling the Draft (Include in Compile: off). Then, define your metadata variables and take them into account during the Draft compile.</Synopsis>
             <Text>---
 title:  'A title'  
 subtitle: 'its sub-title'  
@@ -17,9 +21,9 @@ ack: &lt;!-- This work was supported by the EC, through the RECAP project, part 
 tags: &lt;!-- semantic interoperability, semantic mediations, semantic conflicts, semantic concerns, semantic protocols, remote patient monitoring --&gt;  
 bibliography: src/bib/bibliography.bib  
 csl: templates/my-basic-reference-style.csl  
-abstract: |  Het abstract mag 
-    verschillende regels beslaan.
-  Zolang het maar eindigt met 3 puntjes EN NIKS MEER
+abstract: |  The abstract may 
+    include several lines, separated by a return.
+  As long as the abstract ends with 3 dots on a new line and nothing further!
    
 ...</Text>
         </Document>
@@ -44,46 +48,17 @@ abstract: |  Het abstract mag
             <Text>!!Readers will fall like flies here, so use your precious, gold-plated words here where they can hang on to!!
 &lt;Describe the Problem&gt;
 
-&lt;State you claims&gt;</Text>
+&lt;State you claims&gt;
+
+The main idea of the paper is .... . Our contributions to &lt;subject&gt; are the following:
+
+* ... \cref{first-section}
+* ... \cref{second-section}
+
+</Text>
         </Document>
         <Document ID="5">
             <Title>MMD cheat sheet</Title>
-        </Document>
-        <Document ID="6">
-            <Title>Text and Formats</Title>
-        </Document>
-        <Document ID="7">
-            <Title>Proprietary encodings</Title>
-        </Document>
-        <Document ID="8">
-            <Title>Authors</Title>
-        </Document>
-        <Document ID="9">
-            <Title>Footnotes, Images and Links</Title>
-        </Document>
-        <Document ID="10">
-            <Title>References</Title>
-        </Document>
-        <Document ID="11">
-            <Title>Bullits and numbered lists</Title>
-        </Document>
-        <Document ID="12">
-            <Title>Tables</Title>
-        </Document>
-        <Document ID="13">
-            <Title>Glossary</Title>
-        </Document>
-        <Document ID="14">
-            <Title>Math</Title>
-        </Document>
-        <Document ID="15">
-            <Title>Definitions, proofs etc</Title>
-        </Document>
-        <Document ID="16">
-            <Title>-ise/-ize</Title>
-        </Document>
-        <Document ID="17">
-            <Title>Progress &amp; Planning</Title>
         </Document>
         <Document ID="18">
             <Title>Progress &amp; Planning</Title>
@@ -453,7 +428,22 @@ In 4 sentences (from Kent Beck):
 
 *Results:* 3-4 sentences
  
-*Conclusions:* 1 sentence</Text>
+*Conclusions:* 1 sentence
+
+
+OR (better for design science):
+
+*Background/Problem:* (2 sentences)
+    State the problem
+
+*Motivation:* (2 sentences)
+    Tell why it's an interesting problem
+
+*Objective:* (1 sentence)
+    Tell what your solution achieves (NOT what it is)
+
+*Results/Consequences:* (3-4 sentences)
+    Tell the consequences of using your solution</Text>
         </Document>
         <Document ID="31">
             <Title>Readme</Title>
