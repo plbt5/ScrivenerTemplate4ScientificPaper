@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ScrivenerProject Template="No" Version="1.5" Creator="SCRWIN-1.9.8.0" Device="PC-17875" Modified="2018-08-24 10:34:39 +0200" ModID="7D42E9E6-BD33-4BE7-8D5F-B46406462F4F">
+<ScrivenerProject Template="No" Version="1.5" Creator="SCRWIN-1.9.8.0" Device="PC-17875" Modified="2018-08-24 13:16:59 +0200" ModID="AD004083-FD38-4304-AE82-58434D76D94A">
     <Binder>
-        <BinderItem ID="5" UUID="B892768D-F62D-4A48-8846-84245826AF35" Created="2017-04-10 11:05:49 +0200" Modified="2017-04-10 11:05:49 +0200" Type="Text">
+        <BinderItem ID="37" UUID="0C30F64E-88F5-44FC-9892-ABE4A9B94700" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
             <Title>MMD cheat sheet</Title>
             <MetaData>
                 <FileExtension>rtf</FileExtension>
@@ -13,7 +13,7 @@
                 <Reference Destination="http://johnmacfarlane.net/pandoc/README.html">Pandoc user guide, by John Macfarlane</Reference>
             </References>
             <Children>
-                <BinderItem ID="29" UUID="E631278D-2131-43DA-835B-7321187B10EF" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="38" UUID="E9DD3318-EA3A-460C-9060-7B3A40854D06" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>Text and Formats</Title>
                     <MetaData>
                         <FileExtension>rtf</FileExtension>
@@ -25,7 +25,7 @@
                         <Reference Destination="http://johnmacfarlane.net/pandoc/README.html">Pandoc user guide, by John Macfarlane</Reference>
                     </References>
                 </BinderItem>
-                <BinderItem ID="28" UUID="87E274A9-51AE-4784-BDC3-5F44A7A2CD2B" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="39" UUID="C6841A67-1F7B-4545-9292-F01687042F1D" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>Proprietary encodings</Title>
                     <MetaData>
                         <LabelID>2</LabelID>
@@ -37,16 +37,17 @@
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="27" UUID="69303249-6C7A-4694-A5C6-63DEFF3DA81A" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="40" UUID="3825749D-E67B-43C4-96BB-F2E9907C57D4" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>Authors</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
+                        <FileExtension>rtf</FileExtension>
                     </MetaData>
                     <TextSettings>
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="26" UUID="96C2DF52-864D-424A-BC58-D84B276FB76F" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="41" UUID="159B07BF-4484-41C3-825F-B2B6FAF8E127" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>Footnotes, Images and Links</Title>
                     <MetaData>
                         <FileExtension>rtf</FileExtension>
@@ -58,7 +59,7 @@
                         <Reference Destination="http://johnmacfarlane.net/pandoc/README.html">Pandoc user guide, by John Macfarlane</Reference>
                     </References>
                 </BinderItem>
-                <BinderItem ID="25" UUID="ED0C6623-88C3-46E7-B539-BF0BA4245E17" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="42" UUID="B9D6A470-A822-407C-A335-62BCE8FC1C62" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>References</Title>
                     <MetaData>
                         <StatusID>6</StatusID>
@@ -69,7 +70,7 @@
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="24" UUID="7F00927E-AB05-4671-9DCF-BD0063CBF937" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="43" UUID="6BEDB7B9-2E07-4C50-BB18-2DBC1E77A7CB" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>Bullits and numbered lists</Title>
                     <MetaData>
                         <FileExtension>rtf</FileExtension>
@@ -78,17 +79,16 @@
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="23" UUID="CB0EAE8C-4394-461B-96B0-078AB1F1FC62" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="44" UUID="90FD39B5-03FB-46AB-A5E7-AF025E630815" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>Tables</Title>
                     <MetaData>
                         <FileExtension>rtf</FileExtension>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection Caret="2432">1882,550</TextSelection>
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="22" UUID="25E70E1A-E5A7-4AD8-9930-3336706593F7" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="45" UUID="7CA2A43F-57EB-4B38-AC2C-846413251182" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>Glossary</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
@@ -98,7 +98,7 @@
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="21" UUID="9A7E3B89-8F4E-4C5D-A428-2DE7E153432F" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="46" UUID="6D570C0D-8205-43D5-9806-73CC23CFB2FE" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>Math</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
@@ -108,7 +108,7 @@
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="20" UUID="61956CE5-5D58-47B7-8113-F36733B808A9" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
+                <BinderItem ID="47" UUID="0209C32C-118E-4B16-9296-8E253973878E" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
                     <Title>Definitions, proofs etc</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
@@ -118,8 +118,8 @@
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="19" UUID="9696C13C-FEA0-4E0D-8F6B-7966ECB5F748" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
-                    <Title>-ise/-ize</Title>
+                <BinderItem ID="48" UUID="FA9D223B-5C12-46C7-B55E-022809D437A8" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
+                    <Title>Proper English </Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
                         <FileExtension>rtf</FileExtension>
@@ -127,18 +127,38 @@
                     <TextSettings>
                         <Target Type="Words">0</Target>
                     </TextSettings>
-                </BinderItem>
-                <BinderItem ID="18" UUID="C78A0AD9-87CC-41B3-8A89-99D35072CFDA" Created="2018-05-20 11:07:38 +0200" Modified="2018-05-20 11:07:38 +0200" Type="Text">
-                    <Title>Progress &amp; Planning</Title>
-                    <MetaData>
-                        <LabelID>2</LabelID>
-                        <StatusID>5</StatusID>
-                        <IncludeInCompile>Yes</IncludeInCompile>
-                        <FileExtension>rtf</FileExtension>
-                    </MetaData>
-                    <TextSettings>
-                        <Target Type="Words">0</Target>
-                    </TextSettings>
+                    <Children>
+                        <BinderItem ID="49" UUID="29534B99-B735-4071-AF20-9F2800105D39" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
+                            <Title>-ise/ -ize</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>rtf</FileExtension>
+                            </MetaData>
+                            <TextSettings>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="50" UUID="E3FC365D-19AD-495A-961C-AD56C3A3A3E3" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
+                            <Title>That versus which</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>rtf</FileExtension>
+                            </MetaData>
+                            <TextSettings>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                        <BinderItem ID="51" UUID="22047559-0BF5-4E8E-8654-63BB37D3FE30" Created="2018-08-24 13:06:28 +0200" Modified="2018-08-24 13:06:28 +0200" Type="Text">
+                            <Title>Plural versus possessive -s</Title>
+                            <MetaData>
+                                <IncludeInCompile>Yes</IncludeInCompile>
+                                <FileExtension>rtf</FileExtension>
+                            </MetaData>
+                            <TextSettings>
+                                <Target Type="Words">0</Target>
+                            </TextSettings>
+                        </BinderItem>
+                    </Children>
                 </BinderItem>
             </Children>
         </BinderItem>
@@ -148,7 +168,7 @@
                 <IncludeInCompile>Yes</IncludeInCompile>
             </MetaData>
             <Children>
-                <BinderItem ID="3" UUID="FDE3A400-F9AC-4C43-9E25-1275886F76DE" Created="2016-12-28 14:11:59 +0200" Modified="2018-08-13 11:41:46 +0200" Type="Text">
+                <BinderItem ID="3" UUID="FDE3A400-F9AC-4C43-9E25-1275886F76DE" Created="2016-12-28 14:11:59 +0200" Modified="2018-08-24 13:09:07 +0200" Type="Text">
                     <Title>meta-data</Title>
                     <MetaData>
                         <IncludeInCompile>Yes</IncludeInCompile>
@@ -156,17 +176,15 @@
                         <IconFileName>Information.tiff</IconFileName>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection>513,0</TextSelection>
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
-                <BinderItem ID="31" UUID="8100C839-F6CC-4134-B106-FC4933ECA6B9" Created="2018-05-20 11:15:52 +0200" Modified="2018-05-20 12:06:26 +0200" Type="Text">
+                <BinderItem ID="31" UUID="8100C839-F6CC-4134-B106-FC4933ECA6B9" Created="2018-05-20 11:15:52 +0200" Modified="2018-08-24 13:16:53 +0200" Type="Text">
                     <Title>Readme</Title>
                     <MetaData>
                         <LabelID>3</LabelID>
                     </MetaData>
                     <TextSettings>
-                        <TextSelection Caret="2128">2094,34</TextSelection>
                         <Target Type="Words">0</Target>
                     </TextSettings>
                 </BinderItem>
@@ -278,7 +296,7 @@
     <ProjectTargets>
         <DraftTarget Type="Words" CountIncludedOnly="Yes" CurrentCompileGroupOnly="No" Deadline="2012-04-24 00:00:00 +0000" IgnoreDeadline="Yes">0</DraftTarget>
         <SessionTarget Type="Words" CountDraftOnly="Yes" AllowNegatives="Yes" ResetType="Midnight" DeterminedFromDeadline="No" CanWriteOnDeadlineDate="No" WritingDays="">0</SessionTarget>
-        <PreviousSession Words="20" Characters="146" Date="2018-08-24 10:29:20 +0200"/>
+        <PreviousSession Words="2583" Characters="17080" Date="2018-08-24 13:03:56 +0200"/>
     </ProjectTargets>
     <Collections>
         <Collection Type="Binder" ID="CAFEBABE-0000-0000-0000-000000000000" Color="0.901961 0.917647 0.933333">

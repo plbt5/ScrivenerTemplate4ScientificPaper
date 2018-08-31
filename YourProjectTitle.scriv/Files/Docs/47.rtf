@@ -5,13 +5,6 @@
 \pgnrestart\pgnstarts0
 \pard\plain \ltrch\loch {\f0\fs24\b0\i0 Definitions, Theorems, Proofs and more are not possible in MMD. To that end, apply LateX rules and include appropriate libraries in the latex template, see also https://en.wikibooks.org/wiki/LaTeX/Theorems. The suggestions below are therefore not MMD cheats but LateX cheats instead.}
 \par\plain \f0\fs24\b0\i0
-\par\plain {\f0\fs24\b0\i0 As a result, the MMD-lists do not work anymore and we need to make use of Latex-lists, as follows:}
-\par\plain {\f0\fs24\b0\i0 \\begin\{itemize\}[label=\{-\}]}
-\par\plain {\f0\fs24\b0\i0 \\item here is the first item}
-\par\plain {\f0\fs24\b0\i0 \\item Here is the second item}
-\par\plain {\f0\fs24\b0\i0 \\end\{itemize\}}
-\par\plain \f0\fs24\b0\i0
-\par\plain \f0\fs24\b0\i0
 \par\pard\plain \ri-8561\ltrch\loch {\f0\fs24\b0\i0 \\begin\{mmdef\}[definitie onderwerp]\\label\{def:my-unique-reference\}}
 \par\pard\plain \ltrch\loch {\f0\fs24\b0\i0 Here is a new definition}
 \par\plain {\f0\fs24\b0\i0 \\end\{mmdef\}}
@@ -20,15 +13,30 @@
 \par\pard\plain \ltrch\loch {\f0\fs24\b0\i0 Here is a new example}
 \par\plain {\f0\fs24\b0\i0 \\end\{mmexmp\}}
 \par\plain \f0\fs24\b0\i0
-\par\plain {\f0\fs24\b0\i0 \\begin\{mmdp\}}
+\par\plain {\f0\fs24\b0\i0 \\begin\{mmdp\}[My first design principle]}
 \par\plain {\f0\fs24\b0\i0 \\end\{mmdp\}}
 \par\plain \f0\fs24\b0\i0
 \par\plain {\f0\fs24\b0\i0 \\begin\{mmprf\}}
+\par\plain {\f0\fs24\b0\i0 Write your proof}
 \par\plain {\f0\fs24\b0\i0 \\end\{mmprf\}}
 \par\plain \f0\fs24\b0\i0
 \par\pard\plain \ri-8561\ltrch\loch {\f0\fs24\b0\i0 \\begin\{mmthrq\}\\label\{:rq:my-unique-reference\}}
 \par\pard\plain \ltrch\loch {\f0\fs24\b0\i0 Here is a new research question}
 \par\plain {\f0\fs24\b0\i0 \\end\{mmthrq\}}
+\par\plain \f0\fs24\b0\i0
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 ## KNOWN BUG ##}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 Unfortunately, the MMD format, e.g., MMD-lists, does not work within a Theorem environment, and we need to make use of Latex command. For instance, include a list in the Definition envionment as follows:}
+\par\pard\plain \ri-8561\ltrch\loch {\f0\fs24\b0\i0 \\begin\{mmdef\}}
+\par\plain {\f0\fs24\b0\i0 My definition includes the following items:}
+\par\pard\plain \ltrch\loch {\f0\fs24\b0\i0  \\begin\{itemize\}[label=\{-\}]}
+\par\plain {\f0\fs24\b0\i0    \\item here is the first item}
+\par\plain {\f0\fs24\b0\i0    \\item Here is the second item}
+\par\plain {\f0\fs24\b0\i0  \\end\{itemize\}}
+\par\plain {\f0\fs24\b0\i0 \\end\{mmdef\}}
+\par\plain \f0\fs24\b0\i0
+\par\plain {\f0\fs24\b0\i0 Note that the indentation is only for maintaining an overview of the number of \\begin\{\}-\\end\{\} pairs }
 \par\plain \f0\fs24\b0\i0
 \par\plain {\f0\fs24\b0\i0 ## LaTeX header definition ##}
 \par\plain {\f0\fs24\b0\i0 These definitions/proofs/etc. are based on a package for theorems, i.e., amsthm. Before the above definitions/proofs/etc can work, we need to import and configure the Theorem package. This requires a LaTeX header definition, as follows:}

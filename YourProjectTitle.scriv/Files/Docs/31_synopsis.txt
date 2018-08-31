@@ -1,0 +1,5 @@
+From “How to write a research paper: Seven simple suggestions” by Simon P. Jones
+
+See the youtube recording of his colloquium: https://www.youtube.com/watch?v=1AYxMbYZQ1Y
+
+or his slides here: https://www.cis.upenn.edu/~sweirich/icfp-plmw15/slides/peyton-jones.pdf
