@@ -19,12 +19,12 @@ author:
   affiliation: Eindhoven University of Technology, Eindhoven, The Netherlands  
 version:  &lt;!-- using doPandoc: Any value put here will override the git-versioning --&gt;  
 category: &lt;!-- using doPandoc: Any value put here will create a branch in git (do not use spaces) --&gt;  
-ack: &lt;!-- This work was supported by the EC, through the RECAP project, part of the Interreg IVB NWE Programme. --&gt;    
+ack: &lt;!-- This work was supported by the EC, through the ... project, part of the ... Programme. --&gt;    
 tags: &lt;!-- semantic interoperability, semantic mediations, semantic conflicts, semantic concerns, semantic protocols, remote patient monitoring --&gt;  
 bibliography: src/bib/bibliography.bib  
 csl: templates/my-basic-reference-style.csl  
 abstract: |  The abstract may  
-    include several lines, separated by a return (CS/LF). After every return, i.e., each new line, starts with 4 spaces exactly, unless the line is wrapped (but in such case there is no CR/LF)
+    include several lines, separated by a return (CR/LF). After every return, i.e., each new line, starts with 4 spaces exactly, unless the line is wrapped (but in such case there is no CR/LF)
     The abstract ends with 3 dots on a new line and nothing further!
    
 ...</Text>
@@ -50,7 +50,7 @@ abstract: |  The abstract may
             <Text>!!Readers will fall like flies here, so use your precious, gold-plated words here where they can hang on to!!
 &lt;Describe the Problem&gt;
 
-&lt;State you claims&gt;
+&lt;State you claims, as follows&gt;
 
 The main idea of the paper is .... . Our contributions to &lt;subject&gt; are the following:
 
@@ -576,15 +576,15 @@ Pronouns do not need apostrophes because they inherently show possession.
 ------------------------------------------------------------------------------------------------------------------------
                Phase  Color   Meaning                        Iteration  Review demand
 -------------------- -------- ----------------------------- ----------- -------------------------------------------------
- ToDo                cardinal Synopsis drafted               Yes        Is synopsis relevant against abstract and
-                                                                        scoped logically in relation to other arts?
+ Storyboarding       cardinal Abstract written, Synopsis     Yes        Is synopsis relevant against abstract and
+                              read as storyline                         scoped logically in relation to other parts?
  
- Argumentation       Red      Synopsis rdy, setting up the   Yes        Is argument complete, correct and 
-                              argumentation accordingly.                understandable? 
+ Argumenting         Red      Synopsis rdy, setting up the   Yes        Are arguments complete, correct and 
+                              argumentation accordingly.                understandable? For each section?
                               Use keywords, bullit lists,               Major changes acceptable!
                               don’t write full sentences.
 
- 1st draft           Orange   Focus on sentences, write a    No         Review from critical “stranger” with fresh eyes. 
+ 1st draft           Orange   Focus on sentences, write the  No         Review from critical “stranger” with fresh eyes. 
                               story                                     Understandable? Where did you get lost?
 
  Revised draft       Mint     Processed comments, rewritten  Yes        Grammatically correct? Fits the wording
@@ -599,9 +599,9 @@ Pronouns do not need apostrophes because they inherently show possession.
 
 ------------------------------------------------------------------------------------------------------------------------
 
-When all synopses are ready (phase for all sections: Argumentation), then, by concatenating all synopses, the story board of the paper can be read. In fact, drafting the Introduction should drive that process and, corollary, every claim should fit into a section synopsis.
+When all synopses are ready (phase for all sections: Argumenting), then, by concatenating all synopses, the story board of the paper can be read. In fact, drafting the Introduction should drive that process and, corollary, every claim should fit into a section synopsis.
 
-Note that all documents in the binder will have set Phase to 
+Note that all documents in the binder will have set initial phase to ‘No Phase’; adapt accordingly throughout writing.
 </Text>
         </Document>
         <Document ID="53">
