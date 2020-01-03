@@ -1,0 +1,6 @@
+
+NOTE: The following is a dirty trick to force Scrivener's Compilation process to handle the synopsis equivalent to the Title, Meta-Data, Notes and Text parts:
+
+--> Each synopsis should finish with particular LaTeX code (\end{synopsis}). Then, when you select those different parts to be included in the compilation (in Compile > Formatting), the Synopsis, Meta-Data and Notes will get different text formatting than the Text part.
+
+\end{synopsis}

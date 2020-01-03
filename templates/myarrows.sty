@@ -1,0 +1,38 @@
+\ProvidesPackage{myarrows}[2018/10/26 package myarrows]	% Based on Das extpfeil-Package, extensible arrows: https://www.ctan.org/tex-archive/macros/latex/contrib/extpfeil.
+
+\RequirePackage{amsmath}				% <amsthm> conflicts with <ntheorem> package (section 3.2.2 ftp://ftp.dante.de/pub/tex/macros/latex/contrib/ntheorem/ntheorem.pdf); 
+                                        % Instead, the [amsthm] option is used with <ntheorem> 
+\RequirePackage{extpfeil}				% Apart from other set of arrows, this package also gives a command to create new such arrows
+
+%%%%%%%%%%%
+% My Configs
+%%%%%%%%%%%
+
+
+%%%%%%
+% Arrow definitions
+%%%%%%
+
+
+% Reflexive-transitive closure
+\def\tort{%
+  \twoheadrightarrow%
+}
+
+% symmetric closure
+\def\lra{%
+  \leftrightarrow%
+}
+
+% Specialisation (hollow arrow left)
+\newextarrow{\specln}{{1}{1}{2}{2}}{{\lhd}{\relbar}{\relbar}}
+
+% Generalisation (hollow arrow right)
+\newextarrow{\genln}{{1}{1}{2}{2}}{{\relbar}{\relbar}{\rhd}}
+
+% valid transcription under x, x as its variable
+\def\vldtranscript#1{%
+  \ifmmode\xmapsto{#1}\else{\ensuremath{\xmapsto{#1}}}\fi%
+}
+
+ 
