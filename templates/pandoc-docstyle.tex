@@ -1,26 +1,26 @@
 \documentclass[a4paper,11pt,oneside,oldfontcommands]{memoir}
-\usepackage{ecis2015}
-\usepackage{datetime}    			% sourced from; http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/datetime/
+\usepackage{mystyle2015}
+\usepackage{mySpecialTokens}
+\usepackage[en-GB,datesep={-}]{datetime2}
 \usepackage{longtable}
 
-\usepackage{graphicx}
-
-\usepackage{amssymb, setspace, rotating, titlesec, multirow, adjustbox, array, booktabs, threeparttable}
+%\usepackage{amssymb, setspace, rotating, titlesec, adjustbox, array, threeparttable}
+\usepackage{amssymb, setspace, rotating, titlesec, adjustbox, array, threeparttable}
 									% is all of this necessary?? 
 %%%%%%%%%%%%%%%%%									
 %% Fonts, fonts, fonts, notably for math
 \usepackage{xfrac}					% tbv slanted fractions: \sfrac{}{}
 \usepackage{pifont}
 
-\usepackage[utf8]{inputenc}
+\RequirePackage[utf8]{inputenc}		% NOT required when using xetex as opposed to pdftex
 
-\usepackage[T1]{fontenc}			% 	Ik kan ook overwegen Obyknovennaya Novaya te gebruiken, ook fraai. Gevonden op http://www.tug.dk/FontCatalogue/venturisadfno2/
+\usepackage[T1]{fontenc}
 
 \usepackage{amsmath}				% <amsmath> needs to be loaded before ntheorem (section 3.2.1, ftp://ftp.dante.de/pub/tex/macros/latex/contrib/ntheorem/ntheorem.pdf) 
 \usepackage[mathcal]{euscript}		% tbv de gecalligrafeerde mathcal{O} en W(orld) en (M)odel etc. Refer to http://texdoc.net/texmf-dist/doc/fonts/amsfonts/euscript.pdf
 									% Note that, in fact, eucal and euscript are identical, except that they use different commands (\mathcal and \mathscr). By using euscript 
 									% we only provide \mathscr{} and leave \mathcal{} from amsmath unchanged
-\usepackage{pgothic}				% Used for modern gothic that has a readible S
+\usepackage{pgothic}				% Used for modern gothic that has a readable S
 \DeclareMathAlphabet{\mathgoth}{T1}{pgoth}{m}{n}	% Declaring the pgothic family as math alphabet
 %\usepackage{addfont}				% This would be an alternative for the readible S font, but not working
 %\addfont[1.25]{OT1}{hge}{\hge}
@@ -35,12 +35,17 @@
 \usepackage[normalem]{ulem}			% tbv strikout text: \sout{deze tekst is strikeout}
 \usepackage{siunitx}				% Necessary??
 
+%\usepackage{fourier} 				% Assuming that you are using venturis for text, Hirwen Harendal, who designed the collection, advises that the best choice for mathematics is
+									%	fourier and the second best is mathdesign. Fourier sets text and math fonts.
 \usepackage{venturis2}				% Ik wil het font Venturis ADF No2 toepassen als Normalfont
+									% 	Ik kan ook overwegen Obyknovennaya Novaya te gebruiken, ook fraai. Gevonden op http://www.tug.dk/FontCatalogue/venturisadfno2/
 
 %% End of Fonts
 %%%%%%%%%%%%%%%
 
 \usepackage{xcolor}
+\usepackage{myarrows}				% Some few specific arrow symbols used throughout the document, based on extpfeil
+
 %%\usepackage{MnSymbol}				% Levert foutmelding: Too many math alphabets used in version normal. 
 \usepackage[xindy,toc]{glossaries}	%%%% The glossaries environment. Refer to: http://en.wikibooks.org/wiki/LaTeX/Glossary
 %%%\usepackage{pst-plot}				%%%% The ps trick environment. Zie ook: http://tug.org/PSTricks/main.cgi?file=examples REQUIRES --latex-engine=xelatex
@@ -48,17 +53,36 @@
 %% Theorems
 \usepackage[ntheorem]{empheq}
 \usepackage[thmmarks]{ntheorem}		% Easier handling of theorem-like environments. refer to ftp://ftp.dante.de/pub/tex/macros/latex/contrib/ntheorem/ntheorem.pdf
-
-\usepackage{datetime}    			 % sourced from; http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/datetime/
+ 	
 \usepackage{mdframed}
 
-%% Figures and table placement
-\usepackage{flafter}				% sourced from http://tug.ctan.org/tex-archive/info/epslatex/english/epslatex.pdf page 55
+%% Figures and table placement		% Sourced from http://tug.ctan.org/tex-archive/info/epslatex/english/epslatex.pdf page 55
+\usepackage{flafter}				% Ensure that the figures/tables appear after its figure/table environment definition in the text
+
+\makeatletter						% Change the default figure / table placement from [tbp] to [htbp]; this is useful since mmd prevents us to insert the placement parameters ourselves
+\def\fps@figure{htbp}
+\def\fps@table{htbp}
+\makeatother
+
+\usepackage[section]{placeins}		% Since it is often desirable to keep floats in the section in which they were issued, insert a \FloatBarrier command before each section.
+
+%% Drawings by LaTeXDraw
+%\usepackage{auto-pst-pdf}			% To use pstricks in pdflatex: https://tex.stackexchange.com/questions/8413/how-to-use-pstricks-in-pdflatex
+%\usepackage[pdf,usenames,dvipsnames]{pstricks}
+%\usepackage{epsfig}
+%\usepackage{pst-grad} % For gradients
+% \usepackage{pst-plot} % For axes
+%\usepackage[space]{grffile} % For spaces in paths
+%\usepackage{etoolbox} % For spaces in paths
+%\makeatletter % For spaces in paths
+%\patchcmd\Gread@eps{\@inputcheck#1 }{\@inputcheck"#1"\relax}{}{}
+%\makeatother
+
 
 %% Logical proofs
-%\usepackage{lplfitch}				% sourced from https://github.com/rzach/lplfitch
+\usepackage{lplfitch}				% sourced from https://github.com/rzach/lplfitch
 %									% documentation from http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/lplfitch/lplfitch.pdf
-\usepackage{fitch}					% The fitch package is more simple to use than lplfitch
+%\usepackage{fitch}					% The fitch package is more simple to use than lplfitch
 
 %% Lists
 %\usepackage[ampersand]{easylist}	% The easylist environment
@@ -75,12 +99,16 @@
 
 %% Cross-referencing				% Allow the format of cross-references to be determined automatically according to the “type” of cross-reference (equation, section, etc.) and the context in which the cross-reference is used.
 %\usepackage{varioref}				% sourced from http://texdoc.net/texmf-dist/doc/latex/tools/varioref.pdf
-%\usepackage{hyperref}				% If we want to use hyperref, sometime in the future for some reason, it should be defined in between of varioref and cleveref
+\usepackage{hyperref}				% If we want to use hyperref, sometime in the future for some reason, it should be defined in between of varioref and cleveref
 \usepackage{cleveref}				% sourced from http://tug.ctan.org/macros/latex/contrib/cleveref/cleveref.pdf Makes varioref clever, and reuses its work to improve its own workings. 
 									% The cleveref package must be loaded after all other packages that don’t specifically support it.
 									% Therefore, to be safe, we declare it as last in the document's preamble.
 									% Also note that all \newtheorem definitions must be placed after the cleveref package is loaded.
 
+%% Table stuff						% sourced from: https://tex.stackexchange.com/questions/33510/how-do-i-create-the-headings-for-this-multirow-multicolum-table
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{booktabs}
 
 %%% About this LaTeX template: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -112,6 +140,11 @@
 %
 %% test stuff
 
+% Redefining the paragraph level into a case - see https://tex.stackexchange.com/questions/129208/numbering-paragraphs-in-latex
+\newcounter{para}
+\renewcommand\paragraph[1]{%
+  {\par\refstepcounter{para}\textbf{Case \thepara:\space#1\space}\label{#1}}
+}
 
 %% end test stuff
 
@@ -132,36 +165,55 @@
 % {\end{rep@theorem}}}
 %\makeatother
 	
-% Now define the various theorems
+%%%%% Theorems Definitions %%%%%%
 \theoremstyle{definition}
-\theoremstyle{break}	% The header for all theorems are followed by a newline
-% Examples 				-- are numbered by chapter, and carry an asterisk as closing symbol
+\theoremstyle{break}		% The header for all theorems are followed by a newline
+% Examples 					-- are numbered by chapter, and carry an asterisk as closing symbol
 \theoremsymbol{\ensuremath{_\Box}}
 \newtheorem{mmexmp}{Example}[chapter]
 %\newreptheorem{mmexmp}{Example (cont'd)}
-% Theses   				-- have continuous numbering scheme, and still close with the asterisk
+% Theses   					-- have continuous numbering scheme, and still close with the asterisk
 \newtheorem{Thesis}{Thesis}
-% Research Questions 	-- are enclosed with horizontal lines, and probably (?) close with the asterisk
+% Research Questions 		-- are enclosed with horizontal lines, and probably (?) close with the asterisk
 \theoremprework{\hrule}
 \theorempostwork{\hrule}
 \newtheorem{mmthrq}{Research Question}
-% Assumption			-- are numbered by chapter, and carry an asterisk as closing symbol
+% Assumption				-- are numbered by chapter, and carry an asterisk as closing symbol
 \newtheorem{mmasmptn}{Assumption}[chapter]
-% Definitions 			-- are numbered by chapter, and carry a black square as closing symbol
+% Definitions & theorems	-- are numbered by chapter, and carry a black square as closing symbol
 \theoremsymbol{\ensuremath{_\blacksquare}}
 \newtheorem{mmdef}{Definition}[chapter]
-% Design Principles		-- are numbered by chapter, and carry an open diamond as closing symbol
+\newtheorem{mmtrm}{Theorem}[chapter]
+% Design Principles, proofs	-- are numbered by chapter, and carry an open diamond as closing symbol
 \theoremsymbol{\ensuremath{_\diamond}}
-\newtheorem{mmdesignprinciple}{Design Principle}[chapter]
+\newtheorem{mmdp}{Design Principle}[chapter]
+\newtheorem{mmprf}{Proof}[chapter]
+% Remarks to tables, figures, whatever -- restart numbering at sections, no closing symbol
+\theoremsymbol{}			% no symbol
+\theorembodyfont{\upshape}	% no slanted or italics
+\newtheorem{mmrmk}{Remark}[subsection]	% theorem counter resets every \subsection
+\renewcommand{\themmrmk}{(\arabic{mmrmk})}	% Remove subsection from theorem counter representation
 
-
+% Names of the theorems
 \crefname{mmexmp}{Example}{Examples}
 \crefname{Thesis}{Thesis}{Theses}
 \crefname{mmthrq}{Research Question}{Research Questions}
 \crefname{mmdef}{Definition}{Definitions}
-\crefname{mmdesignprinciple}{Design Principle}{Design Principles}
+\crefname{mmtrm}{Theorem}{Theorems}
+\crefname{mmprf}{Proof}{Proofs}
+\crefname{mmdp}{Design Principle}{Design Principles}
 \crefname{mmasmptn}{Assumption}{Assumptions}
+\crefname{mmrmk}{Remark}{Remarks}
+\crefname{chapter}{Chapter}{Chapters}
+\crefname{section}{Section}{Sections}
+\crefname{figure}{Figure}{Figures}
+\crefname{table}{Table}{Tables}
+\crefname{equation}{Eq.}{Eqs.}
 
+% Definition of List of Theorems (\listtheorems{<name>})
+\theoremlisttype{opt}
+
+%%%%%%%% End Theorems definitions
 
 % Equations				-- are numbered by chapter
 \numberwithin{equation}{chapter}
@@ -171,8 +223,9 @@
 % package backnaur: modify the production operator
 \renewcommand*{\bnfpo}{\textnormal{::=}}
 
-% create more mnemonic term for the check-mark
-\newcommand*\OK{\ding{51}}
+% some more mnemonic terms 
+\newcommand*\OK{\ding{51}}		% for the check-marks
+\newcommand*\ntsa{\ensuremath{\varnothing}}	% no transcription allowed
 
 % Create a typical column header, the content of which is rotated
 \newcolumntype{R}[2]{%
@@ -195,10 +248,6 @@
 
 
 %%% Enter Document Info here: %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%datetime package config %%%
-\renewcommand{\dateseparator}{-}
-%\renewcommand{\timeseparator}{}
-\settimeformat{hhmmsstime}  
 
 \maintitle{$title$} % ← Don't use UPPERCASE here, we do that automatically.
 \subtitle{$subtitle$}
@@ -211,8 +260,9 @@ $if(version)$\versionmgt{version: $version$}$endif$
 \authors{% Separate authors by a "\par" or blank line.
 $for(author)$
 $if(author.name)$
-$author.name$$if(author.affiliation)$, $author.affiliation$$endif$
-$if(author.email)$, $author.email$ \\$endif$
+$author.name$,\\
+$if(author.affiliation)$$author.affiliation$, $endif$
+$if(author.email)$ $author.email$ \\$endif$
 $else$
 $author$$if(affiliation)$, $affiliation$, $endif$\\
 $endif$
@@ -261,19 +311,25 @@ $endif$
 % add table of contents to pdf bookmarks
 $if(toc)$		% use option --toc
 \tableofcontents
+%\pagebreak
+%\printglossaries
 \pagebreak
-\printglossaries
+
+List of definitions:
+\listtheorems{mmdef}
 $endif$
 
 % add list of todo's that are outstanding for this text
+$if(todo)$		% use option --todo
 \listoftodos
-
 \pagebreak
+$endif$
 
 % --- main matter --- --- --- --- ---
 
 $body$
 
+%\chapter*{References}
 % --- index --- --- --- --- ---
 
 

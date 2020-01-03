@@ -1,0 +1,189 @@
+\ProvidesPackage{mystyle2015}[2014/06/04 package mystyle2015]	% Adapted from ecis2015 package ECIS 2015 Proceedings Template.
+\RequirePackage[utf8]{inputenc}		% NOT required when using xetex as opposed to pdftex
+\RequirePackage[T1]{fontenc}
+\RequirePackage[english]{babel}		% <ntheorem>'s [thref] option interferes with the <babel> package, thus in case that <babel> is used, <ntheorem> has to be loaded after <babel>.
+\RequirePackage{csquotes}
+\RequirePackage{mathptmx}
+\RequirePackage{helvet}
+\RequirePackage{graphicx}
+\RequirePackage[hyphens]{url}
+\RequirePackage{tikz}
+\RequirePackage{float}
+\RequirePackage{bigstrut}
+\RequirePackage{enumitem}
+\RequirePackage{xcolor}
+\RequirePackage{amsmath}				% <amsthm> conflicts with <ntheorem> package (section 3.2.2 ftp://ftp.dante.de/pub/tex/macros/latex/contrib/ntheorem/ntheorem.pdf); 
+                                        % Instead, the [amsthm] option is used with <ntheorem> 
+
+%%%\RequirePackage{pdflscape} %% For use of \begin{landscape}
+\RequirePackage[%
+backend=biber,% ← change to old BibTeX here if you really need it
+style=authoryear-comp,natbib=true,maxnames=2,firstinits=true]{biblatex}
+%\usetikzlibrary{shapes,arrows}
+\RequirePackage[protrusion,expansion]{microtype}
+\RequirePackage[pdftex,pdfborder={0 0 0}]{hyperref}
+ 
+%%%%%%%%%%%
+% My Configs
+%%%%%%%%%%%
+
+% Because of the inclusion of a {width=#} statement in the mmd file for each image, 
+% the fallback option below to set the width of graphics to the textwidth, is not necessary anymore.
+%
+%\let\oldincludegraphics\includegraphics
+%\renewcommand{\includegraphics}[1]{\oldincludegraphics[width=\textwidth]{#1}}
+%
+% However, the keepaspectratio apparently is default set to false, resulting in vertically stretched images. This statement sets it to true 
+% See also the CTAN documentation for graphicx, section 4.6 "Global setting of keys"
+\setkeys{Gin}{keepaspectratio=true}
+
+%%%%%%%
+
+% Define a long dash as bullit in list environments
+%\def\labelitemi{--}
+
+%%%%%
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+% Defining configuration for the mdframed package 
+\RequirePackage{mdframed}
+
+\newmdenv[%
+    backgroundcolor=blue!10,
+    linecolor=blue,
+    outerlinewidth=1pt,
+    roundcorner=1mm,	% Works only with framemethod=TikZ or PSTricks
+    skipabove=\baselineskip,
+    skipbelow=\baselineskip,
+	leftmargin=10mm,
+	rightmargin=10mm,
+    font=\small
+	]{sidebox}
+\definecolor{skyblue}{rgb}{246,246,246}
+
+%%%%%%%%%%%
+
+\setstocksize{297mm}{210mm}
+\settrimmedsize{297mm}{210mm}{*}
+\settypeblocksize{237mm}{160mm}{*}
+\setlrmargins{30mm}{*}{*}
+\setulmargins{30mm}{*}{*}
+\setlength{\headsep}{13mm}
+\setlength{\footskip}{14mm}
+\checkandfixthelayout
+
+\frenchspacing
+\flushbottom
+\setlength{\parindent}{0pt}
+\footmarkstyle{\textsuperscript{#1}\kern.4em}
+\setlength{\footmarkwidth}{0pt}
+\setlength{\footmarksep}{-\footmarkwidth}
+
+\makepagestyle{ecis}
+\makeoddhead{ecis}{\itshape\footnotesize\ECISshortauthors{}\,/\,\ECISshorttitle}{}{}
+\makeevenhead{ecis}{\itshape\footnotesize\ECISshortauthors{}\,/\,\ECISshorttitle}{}{}
+\makeoddfoot{ecis}{\thepage}{}{}
+\makeevenfoot{ecis}{\itshape\footnotesize version: \ECISversion{}}{}{\thepage}
+
+\makepagestyle{ecistitle}
+\copypagestyle{ecistitle}{ecis}
+\makeoddhead{ecistitle}{}{}{}
+\makeevenhead{ecistitle}{}{}{}
+
+\renewcommand*{\chaptitlefont}{\fontsize{14}{14}\selectfont\bfseries\sffamily}
+\renewcommand*{\chapnumfont}{\chaptitlefont}
+
+\setcounter{secnumdepth}{3}
+\setsecheadstyle{\fontsize{12}{12}\selectfont\bfseries\sffamily}
+\setsubsecheadstyle{\fontsize{11}{11}\sffamily}
+
+%%%%%%%%%%%%
+% My Scrivener specific tags
+%%%%%%%%%%%%
+
+\newcommand{\scrivForceNL}{~\\\newline}
+
+\newenvironment{synopsis}{%
+\par
+\noindent
+\fontfamily{qcr}\small\selectfont
+\textbf{Synopsis: }
+\noindent}
+{}
+\newenvironment{notes}{%
+\par
+\noindent
+\fontfamily{qcr}\small\selectfont
+\textbf{Note: }
+\noindent}
+{}
+
+
+%%%%%%%%%%%
+
+\newcommand{\ECISversion}{}
+\newcommand{\ECISmaintitle}{}
+\newcommand{\ECISsubtitle}{}
+\newcommand{\ECISshorttitle}{}
+\newcommand{\ECIScategory}{}
+\newcommand{\ECISauthors}{}
+\newcommand{\ECISshortauthors}{}
+\newcommand{\versionmgt}[1]{\renewcommand{\ECISversion}{#1}}
+\newcommand{\maintitle}[1]{\renewcommand{\ECISmaintitle}{#1}}
+\newcommand{\subtitle}[1]{\renewcommand{\ECISsubtitle}{#1}}
+\newcommand{\shorttitle}[1]{\renewcommand{\ECISshorttitle}{#1}}
+\newcommand{\category}[1]{\renewcommand{\ECIScategory}{#1}}
+\newcommand{\authors}[1]{\renewcommand{\ECISauthors}{#1}}
+\newcommand{\shortauthors}[1]{\renewcommand{\ECISshortauthors}{#1}}
+\newcommand{\ECIStitle}{%
+  \begin{center}
+    {\fontsize{17}{20}\selectfont\bfseries\MakeUppercase{\textls[30]{\ECISmaintitle}}}\par\vspace{1.5\baselineskip}%
+    {\fontsize{17}{20}\selectfont\bfseries\textls[25]{\ECISsubtitle}}\par\vspace{1.5\baselineskip}%
+    {\itshape\ECIScategory}\par\vspace{1\baselineskip}%
+    {\ECISversion}\par\vspace{1\baselineskip}%
+  \end{center}
+  \vspace{1\baselineskip}%
+  \begin{hangparas}{1em}{1}\parskip=.5\baselineskip\fontsize{12}{12}\selectfont\ECISauthors\end{hangparas}\par
+  \vspace{2\baselineskip}  
+}
+\renewcommand{\abstractnamefont}{\fontsize{14}{14}\selectfont\bfseries\sffamily}
+\renewcommand{\abstracttextfont}{\itshape}
+\renewcommand{\absnamepos}{flushleft}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+\setlength{\absparindent}{0pt}
+
+\newenvironment{keywords}{\vspace{.5\baselineskip}\itshape Keywords:\space }{\par\vspace{\baselineskip}}
+%\newenvironment{references}{\begin{hangparas}{\bibhang}{1}}{\end{hangparas}}
+
+\hangcaption
+\captiondelim{.\quad}
+\captionstyle[\raggedright]{\raggedright}
+\captionnamefont{\itshape}
+\captiontitlefont{\itshape}
+
+\newcommand{\ECISfigureexample}{%
+  \begin{tikzpicture}[thick,ellipse,text width=2.5cm,text centered,>=stealth']
+    \path (0,0) node[draw] (a) {independent\\variable} 
+     --   (6,0) node[draw] (b) {dependent\\variable};
+    \draw[->] (a) -- (b);
+  \end{tikzpicture}
+}
+
+\firmlists
+\setlist[itemize]{leftmargin=1.5em,labelwidth=0em,labelsep=.5em,itemindent=0pt}
+\setlist[itemize,2]{leftmargin=1.2em,labelwidth=0em,labelsep=.5em,itemindent=0pt}
+\setlist[enumerate]{leftmargin=1.5em,labelwidth=0em,labelsep=.3em,itemindent=0pt}
+\setlist[enumerate,2]{leftmargin=1.2em,labelwidth=0em,labelsep=.3em,itemindent=0pt}
+\renewcommand{\labelitemi}{$\bullet$}
+\renewcommand{\labelitemii}{$\circ$}
+
+
+
+\DeclareFieldFormat[article]{pages}{#1}
+
+
+
+\AtBeginDocument{\ECIStitle\pagestyle{ecis}\thispagestyle{ecistitle}}
