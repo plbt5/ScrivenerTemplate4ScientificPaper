@@ -13,3 +13,5 @@
 * Claims should be described such that you can fail their deliverance: "Gosh, if they really can, exciting, I must read on"
 * Contributions are the properties of the solution.
 * This list *drives* the paper
+
+\end{synopsis}

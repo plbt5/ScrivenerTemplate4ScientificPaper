@@ -1,5 +1,8 @@
 Usage: 
 
-The meta-data is formatted and used as YAML-block. This results in variables that can be used by the text processor, i.e., LaTeX, provided that you add code to the .tex template frits processing. The YAML-block must be included as the very first part of the LaTeX source document (or as a separate side-document that is specified as such in the *.tex template). Scrivener can produce a YAML-block in two ways: either as introducing it to its comiler as the first document in the set, or by adding metadata variables in the configuration to the compile action. 
+The meta-data is formatted and used as YAML-block. This results in variables that can be used by the text processor, i.e., LaTeX, provided that you add code to the .tex template for its processing. The YAML-block must be included as the very first part of the LaTeX source document (or as a separate side-document that is specified as such in the *.tex template). Scrivener can produce a YAML-block in two ways: either as introducing it to its compiler as the first document in the set, or by adding metadata variables in the configuration to the compile action. 
 
 I'm not sure that a combination of both appraches will work, except, possibly, by compling this meta-data document into a separate side document and not taking it into consideration anymore when compiling the Draft (Include in Compile: off). Then, define your metadata variables and take them into account during the Draft compile.
+
+
+\end{synopsis}

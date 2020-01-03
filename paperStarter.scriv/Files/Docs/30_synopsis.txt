@@ -10,3 +10,5 @@ In 4 sentences (from Kent Beck):
 2: Tell why it's an interesting problem
 3: Tell what your solution achieves (NOT what it is)
 4: Tell the consequences of using your solution
+
+\end{synopsis}
